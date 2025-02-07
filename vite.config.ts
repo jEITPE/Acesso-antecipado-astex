@@ -18,4 +18,7 @@ export default defineConfig({
     host: true,
     port: Number(process.env.PORT) || 3000,
   },
+  preview: {
+    allowedHosts: ['healthcheck.railway.app'],
+  },
 })
