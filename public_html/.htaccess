@@ -1,0 +1,13 @@
+# Redirecionar todas as requisições para o index.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Redirecionar API para o backend Python
+RewriteRule ^api/(.*)$ http://localhost:8000/api/$1 [P,L] 
