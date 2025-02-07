@@ -1,13 +1,16 @@
 [build]
 builder = "nixpacks"
+watchPatterns = ["src/**", "public/**"]
 
 [deploy]
 startCommand = "npm run preview"
 healthcheckPath = "/"
 healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
 
 [env]
 NODE_ENV = "production"
 PORT = "3000"
 NODE_VERSION = "18.x"
 NPM_VERSION = "8.x"
+NPM_CONFIG_LEGACY_PEER_DEPS = "true"
