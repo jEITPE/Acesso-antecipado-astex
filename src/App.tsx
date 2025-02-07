@@ -22,7 +22,6 @@ const App: React.FC = () => {
     other_niche: '',
     recommend: ''
   });
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const isFormValid = () => {
     return formData.name && formData.phone && formData.email && formData.company && formData.niches.length > 0;
@@ -32,10 +31,8 @@ const App: React.FC = () => {
     e.preventDefault();
     if (isFormValid()) {
       try {
-        const response = await axios.post('http://localhost:8000/api/whitelist', formData);
-        if (response.data.status === 'success') {
-          setShowSuccess(true);
-        }
+        await axios.post('http://localhost:8000/api/whitelist', formData);
+        // Success handling can be added here if needed
       } catch (error) {
         console.error('Error submitting form:', error);
       }
@@ -49,15 +46,17 @@ const App: React.FC = () => {
           <h1 className="text-3xl font-bold">Formulário de Cadastro</h1>
           <Link 
             to="/admin" 
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             Admin
           </Link>
         </div>
-        {/* Adicione seu formulário aqui */}
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
+          {/* Form content */}
+        </form>
       </div>
     </div>
   );
 };
 
-export default App; 
+export default App;
