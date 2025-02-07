@@ -1,6 +1,5 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm run build"
 
 [deploy]
 startCommand = "npm run preview"
@@ -10,3 +9,5 @@ healthcheckTimeout = 100
 [env]
 NODE_ENV = "production"
 PORT = "3000"
+NODE_VERSION = "18.x"
+NPM_VERSION = "8.x"

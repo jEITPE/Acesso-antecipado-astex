@@ -1,8 +1,9 @@
 [phases.setup]
-cmds = ['npm install -g npm@latest']
+nixPkgs = ['nodejs-18_x']
+cmds = ['npm install -g npm@8']
 
 [phases.install]
-cmds = ['npm ci']
+cmds = ['npm install']
 
 [phases.build]
 cmds = ['npm run build']
@@ -12,3 +13,5 @@ cmd = 'npm run preview'
 
 [variables]
 NODE_ENV = "production"
+NODE_VERSION = "18.x"
+NPM_VERSION = "8.x"
