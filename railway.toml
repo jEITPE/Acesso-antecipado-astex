@@ -10,8 +10,8 @@ restartPolicyType = "ON_FAILURE"
 healthcheckProtocol = "http"
 
 [env]
+PORT = 8080
 NODE_ENV = "production"
-PORT = "8080"
 NODE_VERSION = "18.x"
 NPM_VERSION = "8.x"
 NPM_CONFIG_LEGACY_PEER_DEPS = "true"
