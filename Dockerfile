@@ -13,8 +13,8 @@ COPY . .
 RUN npm run build
 
 # Expose the port
-ENV PORT=3000
-EXPOSE 3000
+ENV PORT=8080
+EXPOSE 8080
 
 # Start the app
-CMD ["npm", "run", "preview"]
+CMD ["sh", "-c", "npm run preview -- --port $PORT --host 0.0.0.0"]

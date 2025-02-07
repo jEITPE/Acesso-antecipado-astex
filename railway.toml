@@ -7,10 +7,11 @@ startCommand = "npm run preview"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "ON_FAILURE"
+healthcheckProtocol = "http"
 
 [env]
 NODE_ENV = "production"
-PORT = "3000"
+PORT = "8080"
 NODE_VERSION = "18.x"
 NPM_VERSION = "8.x"
 NPM_CONFIG_LEGACY_PEER_DEPS = "true"
