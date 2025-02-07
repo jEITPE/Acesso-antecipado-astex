@@ -19,6 +19,12 @@ export default defineConfig({
     port: Number(process.env.PORT) || 3000,
   },
   preview: {
-    allowedHosts: ['healthcheck.railway.app'],
+    host: true,
+    port: Number(process.env.PORT) || 8080,
+    allowedHosts: [
+      'healthcheck.railway.app',
+      'acesso-antecipado-astex-production.up.railway.app',
+      '.railway.app', // Permite todos os subdomínios do railway.app
+    ],
   },
 })
