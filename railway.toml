@@ -1,10 +1,12 @@
 [build]
-builder = "NIXPACKS"
+builder = "nixpacks"
+buildCommand = "npm run build"
 
 [deploy]
 startCommand = "npm run preview"
-restartPolicyType = "ON_FAILURE"
+healthcheckPath = "/"
+healthcheckTimeout = 100
 
 [env]
-PORT = "3000"
 NODE_ENV = "production"
+PORT = "3000"
